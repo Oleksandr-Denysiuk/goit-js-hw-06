@@ -33,8 +33,9 @@ const createBoxes = (amount) => {
 };
 
 const destroyBoxes = () => {
-  input.value = "";
-  boxes.innerHTML = "";
+  // input.value = "";
+  // boxes.innerHTML = "";
+  location.reload();
 };
 
 createButton.addEventListener("click", () => {
