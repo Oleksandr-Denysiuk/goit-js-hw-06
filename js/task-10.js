@@ -8,11 +8,13 @@ const createButton = document.querySelector("button[data-create]");
 const destroyButton = document.querySelector("button[data-destroy]");
 const boxes = document.querySelector("#boxes");
 const boxesArray = [];
-console.log(boxes);
+
+boxes.style.cssText +=
+  "display:flex; flexDirection: row; flex-wrap: wrap; gap: 10px;";
 
 const createBoxes = (amount) => {
   let defaultBoxSize = 20;
-  console.log(amount);
+
   if (amount >= input.min && amount <= input.max) {
     for (let i = 0; i < amount; i += 1) {
       defaultBoxSize += 10;
@@ -23,13 +25,11 @@ const createBoxes = (amount) => {
       boxElement.style.backgroundColor = getRandomHexColor();
 
       boxesArray.push(boxElement);
-      console.log(boxesArray);
-      boxes.append(...boxesArray);
-      console.log(boxes);
     }
   } else {
     alert("Enter a number from 1 to 100!");
   }
+  boxes.append(...boxesArray);
 };
 
 const destroyBoxes = () => {
